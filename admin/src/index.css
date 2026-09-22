@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@keyframes floaty {
+     0% {
+          transform: translateY(0px);
+     }
+
+     50% {
+          transform: translateY(-6px);
+     }
+
+     100% {
+          transform: translateY(0px);
+     }
+}
+
+@keyframes replyPulse {
+     0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.45);
+     }
+
+     70% {
+          transform: scale(1.08);
+          box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+     }
+
+     100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+     }
+}
+
+.reply-btn {
+     animation: replyPulse 2s infinite;
+}
+
+.reply-btn:hover {
+     animation-play-state: paused;
+     transform: scale(1.12);
+}
+
+.animate-float {
+     animation: floaty 4s ease-in-out infinite;
+}
+
+.duration-350 {
+     transition-duration: 350ms;
+}  
+
+.modalOverlay {
+     position: fixed;
+     inset: 0;
+     background: rgba(0, 0, 0, 0.6);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+}
+
+.modalBox {
+     background: white;
+     padding: 20px;
+     border-radius: 12px;
+     width: 400px;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+}
+
+.modalBox input,
+.modalBox textarea {
+     padding: 10px;
+     border: 1px solid #ddd;
+     border-radius: 8px;
+}
+
+.modalActions {
+     display: flex;
+     justify-content: flex-end;
+     gap: 10px;
+}
